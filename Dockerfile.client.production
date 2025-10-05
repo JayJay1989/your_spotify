@@ -4,6 +4,8 @@ WORKDIR /app
 
 ENV MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify
 
+ENV PORT=3000
+
 RUN apk add python3 gcc g++ make cmake
 
 COPY yarn.lock yarn.lock
@@ -34,5 +36,9 @@ RUN npm install -g serve
 
 COPY --from=builder /app/apps/client/scripts/ apps/client/scripts/
 COPY --from=builder /app/apps/client/build/ apps/client/build/
+
+# Expose the port
+
+EXPOSE ${PORT}
 
 ENTRYPOINT [ "sh", "/app/apps/client/scripts/run/run.sh" ]
