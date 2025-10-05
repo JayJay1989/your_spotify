@@ -1,6 +1,6 @@
 {
   "name": "@your_spotify/server",
-  "version": "1.14.0",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "start": "node lib/index.js",
@@ -40,3 +40,4 @@
     "@your_spotify/dev": "*"
   }
 }
+
