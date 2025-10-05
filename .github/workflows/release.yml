@@ -26,7 +26,7 @@ jobs:
         id: docker-meta
         uses: docker/metadata-action@v5
         with:
-          images: JayJay1989/your_spotify # required dummy value, will not be used
+          images: jayjay1989/your_spotify # required dummy value, will not be used
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
@@ -57,10 +57,10 @@ jobs:
           push: true
           labels: ${{ steps.docker-meta.outputs.labels }}
           tags: |
-            yooooomi/your_spotify_client:latest
-            yooooomi/your_spotify_client:${{ steps.tag.outputs.tag }}
-            ghcr.io/JayJay1989/your_spotify_client:latest
-            ghcr.io/JayJay1989/your_spotify_client:${{ steps.tag.outputs.tag }}
+            jayjay1989/your_spotify_client:latest
+            jayjay1989/your_spotify_client:${{ steps.tag.outputs.tag }}
+            ghcr.io/jayjay1989/your_spotify_client:latest
+            ghcr.io/jayjay1989/your_spotify_client:${{ steps.tag.outputs.tag }}
 
       - name: Build and push server release
         uses: docker/build-push-action@v5
@@ -71,8 +71,9 @@ jobs:
           push: true
           labels: ${{ steps.docker-meta.outputs.labels }}
           tags: |
-            JayJay1989/your_spotify_server:latest
-            JayJay1989/your_spotify_server:${{ steps.tag.outputs.tag }}
-            ghcr.io/JayJay1989/your_spotify_server:latest
-            ghcr.io/JayJay1989/your_spotify_server:${{ steps.tag.outputs.tag }}
+            jayjay1989/your_spotify_server:latest
+            jayjay1989/your_spotify_server:${{ steps.tag.outputs.tag }}
+            ghcr.io/jayjay1989/your_spotify_server:latest
+            ghcr.io/jayjay1989/your_spotify_server:${{ steps.tag.outputs.tag }}
+
 
