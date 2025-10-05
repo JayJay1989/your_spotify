@@ -57,8 +57,6 @@ jobs:
           push: true
           labels: ${{ steps.docker-meta.outputs.labels }}
           tags: |
-            jayjay1989/your_spotify_client:latest
-            jayjay1989/your_spotify_client:${{ steps.tag.outputs.tag }}
             ghcr.io/jayjay1989/your_spotify_client:latest
             ghcr.io/jayjay1989/your_spotify_client:${{ steps.tag.outputs.tag }}
 
@@ -71,9 +69,8 @@ jobs:
           push: true
           labels: ${{ steps.docker-meta.outputs.labels }}
           tags: |
-            jayjay1989/your_spotify_server:latest
-            jayjay1989/your_spotify_server:${{ steps.tag.outputs.tag }}
             ghcr.io/jayjay1989/your_spotify_server:latest
             ghcr.io/jayjay1989/your_spotify_server:${{ steps.tag.outputs.tag }}
+
 
 
